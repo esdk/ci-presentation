@@ -65,7 +65,7 @@ def initGradleProperties() {
 
 def startDockerContainers() {
 	// TODO: Add your credentials for sdp.registry.abas.sh to Jenkins and specify the credentials ID below
-	withCredentials([usernamePassword(credentialsId: '',
+	withCredentials([usernamePassword(credentialsId: '82305355-11d8-400f-93ce-a33beb534089',
 			passwordVariable: 'PASSWORD', usernameVariable: 'USER')]) {
 		sh 'docker login sdp.registry.abas.sh -u $USER -p $PASSWORD'
 	}
