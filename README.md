@@ -1,3 +1,4 @@
+[![Build Status](https://travis-ci.org/esdk/ci-presentation.svg?branch=master)](https://travis-ci.org/esdk/ci-presentation)
 # ciexampleapp
 This is the source code of ciexampleapp, an abas Essentials App build on the abas Essentials SDK.
 
