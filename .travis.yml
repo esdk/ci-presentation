@@ -24,6 +24,8 @@ before_install:
   - docker login sdp.registry.abas.sh -u $REGISTRY_USER -p $REGISTRY_PASSWORD
   - travis_wait docker-compose up -d
   - sleep 45
+  - chmod a+x initGradleProperties.sh
+  - chmod a+x gradlew
   - ./initGradleProperties.sh
 
 install:
