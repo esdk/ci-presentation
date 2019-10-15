@@ -40,10 +40,10 @@ node {
 
 def prepareEnv() {
 	// TODO: Configure a jdk version 8 as tool on your Jenkins and name it `jdk-8`
-	def jdkHome = tool name: 'jdk-8', type: 'jdk'
+	def jdkHome = tool name: 'java8', type: 'jdk'
 	env.PATH = "${jdkHome}/bin:${env.PATH}"
 	env.JAVA_HOME = "${jdkHome}"
-	env.GRADLE_USER_HOME = "${WORKSPACE}/gradle-home"
+	env.GRADLE_USER_HOME = "${WORKSPACE}/gradle-home	"
 	sh """
 		mkdir -p ${env.GRADLE_USER_HOME}
 		echo 'org.gradle.java.home=${env.JAVA_HOME}' > ${env.GRADLE_USER_HOME}/gradle.properties
