@@ -74,5 +74,5 @@ def startDockerContainers() {
 }
 
 def stopDockerContainers() {
-	sh '$HOME/docker-compose down || true'
+	sh 'docker-compose down || true'
 }
