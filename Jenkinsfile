@@ -69,7 +69,7 @@ def startDockerContainers() {
 			passwordVariable: 'PASSWORD', usernameVariable: 'USER')]) {
 		sh 'docker login sdp.registry.abas.sh -u $USER -p $PASSWORD'
 	}
-	sh '$HOME/docker-compose up -d'
+	sh 'docker-compose up -d'
 	sleep 30
 }
 
