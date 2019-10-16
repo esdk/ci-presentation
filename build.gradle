@@ -21,7 +21,7 @@ esdk {
 		enums = []
 		namedTypes = []
 		languages = "DA"
-		essentialsVersions = []
+		essentialsVersions = ["2017r4n16p02-2017r4n16p25"]
 	}
 
 	abas {
