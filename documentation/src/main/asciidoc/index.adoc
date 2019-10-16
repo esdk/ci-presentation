@@ -1,0 +1,17 @@
+:docinfo:
+= ciapp
+Documentation
+:nofooter:
+
+This document describes the ciapp app.
+
+include::subpage.adoc[]
+
+include::additionalpage.adoc[]
+
+== About
+
+ciapp +
+(C) Your Company
+
+https://your-website.com/
