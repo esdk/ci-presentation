@@ -20,7 +20,7 @@ node {
 			sh './gradlew fullInstall'
 		}
 		stage('Test') {
-			currentBuild.description = "Test"
+			currentBuild.description = "Tests"
 			sh './gradlew verify'
 			sh './gradlew createAppJar'
 		}
