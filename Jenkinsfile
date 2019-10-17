@@ -49,7 +49,7 @@ node {
 
 def onMaster(Closure run) {
 	echo("Branch: $env.BRANCH_NAME")
-	if ("master" == env.BRANCH_NAME || additionalBranch == env.BRANCH_NAME) {
+	if ("master" == env.BRANCH_NAME) {
 		run()
 	}
 }
