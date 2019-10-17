@@ -15,8 +15,10 @@ node {
 			startDockerContainers()
 		}
 		stage('Build') {
+			def json = [:]
+			json.test = "test"
 			currentBuild.description = "Build"
-			writeJson file: "testJson.tmp", "{test:test2}": json, pretty: 4
+			writeJson file: "testJson.json", json: json, pretty: 4
 			sh './gradlew checkPreconditions'
 			sh './gradlew fullInstall'
 		}
