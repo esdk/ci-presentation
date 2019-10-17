@@ -16,6 +16,7 @@ node {
 		}
 		stage('Build') {
 			currentBuild.description = "Build"
+			writeJson file: "testJson.tmp", "{test:test2}": json, pretty: 4
 			sh './gradlew checkPreconditions'
 			sh './gradlew fullInstall'
 		}
