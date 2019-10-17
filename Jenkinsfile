@@ -47,6 +47,14 @@ node {
 	}
 }
 
+def onMaster(Closure run) {
+	echo("Branch: $env.BRANCH_NAME")
+	if ("master" == env.BRANCH_NAME || additionalBranch == env.BRANCH_NAME) {
+		run()
+	}
+}
+
+
 def prepareEnv() {
 	// TODO: Configure a jdk version 8 as tool on your Jenkins and name it `jdk-8`
 	def jdkHome = tool name: 'java8', type: 'jdk'
