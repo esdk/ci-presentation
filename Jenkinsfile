@@ -20,7 +20,7 @@ node {
 			sh './gradlew fullInstall'
 		}
 		stage('Test') {
-			currentBuild.description = "Test"
+			currentBuild.description = "Tests"
 			sh './gradlew verify'
 			sh './gradlew createAppJar'
 		}
@@ -49,7 +49,7 @@ node {
 
 def onMaster(Closure run) {
 	echo("Branch: $env.BRANCH_NAME")
-	if ("master" == env.BRANCH_NAME || additionalBranch == env.BRANCH_NAME) {
+	if ("master" == env.BRANCH_NAME) {
 		run()
 	}
 }
