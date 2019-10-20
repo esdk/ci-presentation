@@ -24,6 +24,14 @@ node {
 			sh './gradlew verify'
 			sh './gradlew createAppJar'
 		}
+		onMaster {
+			stage('Ready for Release?') {
+				currentBuild.description = currentBuild.description + " successful.\nRelease?"
+				def answer = input message: "Ready for release?",
+						ok: 'Release',
+						submitterParameter: 'approvedBy'
+			}
+		}
 	} catch (any) {
 		currentBuild.description = currentBuild.description + " failed"
 		any.printStackTrace()
@@ -75,4 +83,12 @@ def startDockerContainers() {
 
 def stopDockerContainers() {
 	sh '$HOME/docker-compose down || true'
+}
+
+
+def onMaster(Closure run) {
+	echo("Branch: $env.BRANCH_NAME")
+	if ("master" == env.BRANCH_NAME) {
+		run()
+	}
 }
