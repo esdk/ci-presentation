@@ -1,0 +1,17 @@
+:docinfo:
+= ciappexmp
+Documentation
+:nofooter:
+
+This document describes the ciappexmp app.
+
+include::subpage.adoc[]
+
+include::additionalpage.adoc[]
+
+== About
+
+ciappexmp +
+(C) Your Company
+
+https://your-website.com/
