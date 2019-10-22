@@ -10,7 +10,7 @@ repositories {
 
 esdk {
 	app {
-		name = "ciapp"
+		name = "ciappexmp"
 		vendorId = "ag"
 		appId = "ciapp"
 		shared = false
@@ -21,7 +21,7 @@ esdk {
 		enums = []
 		namedTypes = []
 		languages = "DA"
-		essentialsVersions = ["2017r4n16p1-2018r4n16p25"]
+		essentialsVersions = ["2017r1n00-2017r4n16"]
 	}
 
 	abas {

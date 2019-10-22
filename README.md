@@ -1,5 +1,5 @@
-# ciapp
-This is the source code of ciapp, an abas Essentials App build on the abas Essentials SDK.
+# ciappexmp
+This is the source code of ciappexmp, an abas Essentials App build on the abas Essentials SDK.
 
 ## General setup
 If you are using proxies, add a gradle.properties file to your $GRADLE_USER_HOME.

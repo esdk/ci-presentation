@@ -1,9 +1,9 @@
 :docinfo:
-= ciapp
+= ciappexmp
 Documentation
 :nofooter:
 
-This document describes the ciapp app.
+This document describes the ciappexmp app.
 
 include::subpage.adoc[]
 
@@ -11,7 +11,7 @@ include::additionalpage.adoc[]
 
 == About
 
-ciapp +
+ciappexmp +
 (C) Your Company
 
 https://your-website.com/

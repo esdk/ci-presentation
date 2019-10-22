@@ -85,7 +85,6 @@ def stopDockerContainers() {
 	sh '$HOME/docker-compose down || true'
 }
 
-
 def onMaster(Closure run) {
 	echo("Branch: $env.BRANCH_NAME")
 	if ("master" == env.BRANCH_NAME) {
