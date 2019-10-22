@@ -40,7 +40,7 @@ node {
 
 def prepareEnv() {
 	// TODO: Configure a jdk version 8 as tool on your Jenkins and name it `jdk-8`
-	def jdkHome = tool name: 'jdk-8', type: 'jdk'
+	def jdkHome = tool name: 'java8', type: 'jdk'
 	env.PATH = "${jdkHome}/bin:${env.PATH}"
 	env.JAVA_HOME = "${jdkHome}"
 	env.GRADLE_USER_HOME = "${WORKSPACE}/gradle-home"
@@ -65,7 +65,7 @@ def initGradleProperties() {
 
 def startDockerContainers() {
 	// TODO: Add your credentials for sdp.registry.abas.sh to Jenkins and specify the credentials ID below
-	withCredentials([usernamePassword(credentialsId: '<your-credentials-id>',
+	withCredentials([usernamePassword(credentialsId: '82305355-11d8-400f-93ce-a33beb534089',
 			passwordVariable: 'PASSWORD', usernameVariable: 'USER')]) {
 		sh 'docker login sdp.registry.abas.sh -u $USER -p $PASSWORD'
 	}
