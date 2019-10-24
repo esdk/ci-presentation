@@ -13,7 +13,8 @@ node {
 			prepareEnv()
 			def json = [:]
 			json.results = "some string to be written in the json"
-			writeJSON file: "jsonfile.json", json: groovy.json.JsonOutput.toJson(json), pretty: 4
+			def outData = readJSON text: groovy.json.JsonOutput.toJson(json)
+			writeJSON file: "jsonfile.json", json: outData, pretty: 4
 
 			//initGradleProperties()
 			//startDockerContainers()
