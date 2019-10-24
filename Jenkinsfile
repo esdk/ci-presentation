@@ -8,13 +8,17 @@
 node {
 	try {
 		stage('Setup') {
+			currentBuild.description = "Setup"
 			checkout scm
 			prepareEnv()
-			currentBuild.description = "Setup"
-			initGradleProperties()
-			startDockerContainers()
+			def json = [:]
+			json.results = "some string to be written in the json"
+			writeJSON file: "jsonfile.json", json: groovy.json.JsonOutput.toJson(json), pretty: 4
+
+			//initGradleProperties()
+			//startDockerContainers()
 		}
-		stage('Build') {
+		/*stage('Build') {
 			currentBuild.description = "Build"
 			sh './gradlew checkPreconditions'
 			sh './gradlew fullInstall'
@@ -23,15 +27,7 @@ node {
 			currentBuild.description = "Test"
 			sh './gradlew verify'
 			sh './gradlew createAppJar'
-		}
-		onMaster {
-			stage('Ready for Release?') {
-				currentBuild.description = currentBuild.description + " successful.\nRelease?"
-				def answer = input message: "Ready for release?",
-						ok: 'Release',
-						submitterParameter: 'approvedBy'
-			}
-		}
+		}*/
 	} catch (any) {
 		currentBuild.description = currentBuild.description + " failed"
 		any.printStackTrace()
