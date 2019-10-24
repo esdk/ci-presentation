@@ -40,6 +40,7 @@ node {
 		junit allowEmptyResults: true, testResults: 'build/test-results/**/*.xml'
 		archiveArtifacts allowEmptyArchive: true, artifacts: 'build/reports/**'
 		archiveArtifacts allowEmptyArchive: true, artifacts: 'build/libs/*.jar'
+		archiveArtifacts allowEmptyArchive: true, artifacts: '*.json'
 	}
 }
 
